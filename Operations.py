@@ -1,5 +1,5 @@
-def evaluate(expr: str) -> str:
-    return str(operation(expr.split(" ")))
+def evaluate(parts: list[str], spot: int) -> str:
+    return str(operation(parts[spot-1:spot+2]))
 
 def operation(op: list[str]) -> float | int:
     match op[1]:
