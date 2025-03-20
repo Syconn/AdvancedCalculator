@@ -2,7 +2,6 @@
 import Operations
 
 def calculate(problem: str):
-    # return Operations.evaluate(problem)
     return equation(problem.split(" "))
 
 # PEMDAS
@@ -15,6 +14,3 @@ def equation(parts):
         op = find_operation(parts)
         parts = parts[0:op[0]-1] + [Operations.evaluate(parts, op[0])] + parts[op[0]+2:]
     return parts[0]
-
-if __name__ == "__main__":
-    print(calculate("2 + 2 / 2 * 4"))
